@@ -3,9 +3,7 @@ from typing import TypedDict
 from model import model
 
 prompt = """
-You are given the information about two people whcih includes the following:
 
-You are also given the following information:
 
 
 Your job is to suggest a date idea based on the above information provided and you must return the response in the following json format. No markdown only simple json as follows:

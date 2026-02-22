@@ -2,8 +2,21 @@ import json
 from fastapi import FastAPI, HTTPException
 from agent import run
 from utils import get_user_by_name,get_user_matches,calculate_distance
- 
+
+
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # your frontend
+    allow_credentials=True,
+    allow_methods=["*"],  # GET, POST, PUT, DELETE, etc
+    allow_headers=["*"],  # Authorization, Content-Type, etc
+)
+
+
 
 @app.get("/")
 def hello():
